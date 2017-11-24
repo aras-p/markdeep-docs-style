@@ -7,8 +7,7 @@ directly in the browser. No Markdown processors to run or any of that stuff!
 The default Markdeep styling makes the result look more like a book than a "documentation page",
 so I cooked up an alternative CSS stylesheet to make it look different.
 
-![This Markdeep style](/images/markdeep-docs.png?raw=true "This Markdeep style")
-![Default Markdeep style](/images/markdeep-default.png?raw=true "Default Markdeep style")
+![Comparison](/images/markdeep-docs.png?raw=true "Comparison")
 
 Here's a little example page: [formatted](https://rawgit.com/aras-p/markdeep-docs-style/master/example.md.html)
 and [raw source](https://raw.githubusercontent.com/aras-p/markdeep-docs-style/master/example.md.html).
