@@ -3,46 +3,43 @@
  *
  * Written by Aras Pranckevičius, http://aras-p.info/
  * Licensed as public domain or BSD 2-clause, whichever is more convenient for you.
+ *
+ * https://github.com/aras-p/markdeep-docs-style
  */
 body {
-	max-width: 70%;
+	max-width: 75%;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-align: left;
 	margin: 0;
 	padding: 0 1em;
 }
 
+/* if screen is wide enough, put table of contents on the right side */
 @media screen and (min-width: 60em) {
 	.md .longTOC, .md .mediumTOC, .md .shortTOC {
-		max-width: 21%;
+		max-width: 20%;
+		width: 20%;
 		float: right;
 		position: fixed;
 		right: 0px;
 		top: 0px;
 	}
 }
+/* for narrow screens or print, hide table of contents */
 @media screen and (max-width: 60em) {
-	.md .longTOC, .md .mediumTOC, .md .shortTOC {
-		display: none;
-	}
-	body {
-		max-width: 100%;
-	}
+	.md .longTOC, .md .mediumTOC, .md .shortTOC { display: none; }
+	body { max-width: 100%; }
 }
 @media print {
-	.md .longTOC, .md .mediumTOC, .md .shortTOC {
-		display: none;
-	}
-	body {
-		max-width: 100%;
-	}
+	.md .longTOC, .md .mediumTOC, .md .shortTOC { display: none; }
+	body { max-width: 100%; }
 }
 
-
-
+/* reset heading/link fonts to that of body */
+.md a,
 .md div.title, contents, .md .tocHeader,
-h1, h2, h3, h4, h5, h6,
-.nonumberh1, .nonumberh2, .nonumberh3, .nonumberh4, .nonumberh5, .nonumberh6,
+.md h1, .md h2, .md h3, .md h4, .md h5, .md h6,
+.md .nonumberh1, .md .nonumberh2, .md .nonumberh3, .md .nonumberh4, .md .nonumberh5, .md .nonumberh6,
 .md .shortTOC, .md .mediumTOC, .md .longTOC {
 	font-family: inherit;
 }
@@ -51,37 +48,49 @@ h1, h2, h3, h4, h5, h6,
 	padding: 0;
 	text-align: inherit;
 }
-h1, h2, .nonumberh1, .nonumberh2 {
+
+/* faint border below headings */
+.md h1, .md h2, .md h3, .md h4,
+.md .nonumberh1, .md .nonumberh2, .md .nonumberh3, .md .nonumberh4 {
 	border-bottom: 1px solid rgba(0,0,0,.1);
 }
-h1, .nonumberh1, .md div.title {
+/* heading font styles */
+.md h1, .md .nonumberh1, .md div.title {
 	font-size: 150%;
 	font-weight: 600;
     color: rgba(0,0,0,.7);
 }
-h2, .nonumberh2 {
+.md h2, .md .nonumberh2 {
 	font-size: 120%;
 	font-weight: 400;
     color: rgba(0,0,0,.9);
 }
-h1:before, h2:before, h3:before { content: none; }
-.md a {
-	font-family: inherit;
+.md h3, .md .nonumberh3 {
+	font-size: 110%;
+	font-weight: 400;
+    color: rgba(0,0,0,.7);
 }
+/* no numbering of headings */
+.md h1:before, .md h2:before, .md h3:before, .md h4:before { content: none; }
+
+/* link styling */
 .md a:link, .md a:visited {
 	color: #3f51b5;
 }
-code, pre.listing {
+
+/* inline and block code */
+.md code, .md pre.listing {
 	background-color: rgba(0,0,0,.05);
 	padding: 0.1em 0.2em;
 	border-radius: 0.15em;
 }
-pre.listing code {
+.md pre.listing code {
 	background-color: transparent;
 	padding: 0;
 	border: none;
 }
 
+/* table of contents styling; make all 3 forms of it look the same */
 .md .longTOC, .md .mediumTOC, .md .shortTOC {
 	font-size: inherit;
 	line-height: 120%;
@@ -89,18 +98,15 @@ pre.listing code {
 	padding: .4rem;
 	border-left: .1rem solid #3f51b5;
 }
-
 .md .tocHeader {
 	margin: 0;
 	padding: 0;
 	border: none;
 	font-size: inherit;
 }
-
-.tocNumber {
+.md .tocNumber {
 	display: none;
 }
-
 .md .longTOC .level1, .md .mediumTOC .level1, .md .shortTOC .level1 {
 	font-weight: inherit;
 	padding: 0;
@@ -130,6 +136,7 @@ pre.listing code {
 	font-size: 90%;
 }
 
+/* tables; use fainter colors than regular markdeep style */
 .md table.table {
 	font-size: 90%;
 }
@@ -145,21 +152,22 @@ pre.listing code {
 	background-color: #f4f4f4;
 }
 
-.note, .warn, .error {
+/* custom Admonition-style "note", "warn", "error" blocks */
+.md .note, .md .warn, .md .error {
 	position: relative;
     margin: 1em 0;
     padding: .4rem 0.8rem;
     border-radius: .2rem;
 }
-.note {
+.md .note {
     border-left: 1.2rem solid rgba(68,138,255,.4);
     background-color: rgba(68,138,255,.15);
 }
-.warn {
-    border-left: 1.2rem solid rgba(0,191,165,.4);
-    background-color: rgba(0,191,165,.15);
+.md .warn {
+    border-left: 1.2rem solid rgba(255,145,0,.4);
+    background-color: rgba(255,145,0,.15);
 }
-.error {
+.md .error {
     border-left: 1.2rem solid rgba(255,23,68,.4);
     background-color: rgba(255,23,68,.15);
 }
