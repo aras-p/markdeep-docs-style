@@ -1,0 +1,121 @@
+**Example page!**
+
+This is example page of [markdeep-docs-style](https://github.com/aras-p/markdeep-docs-style),
+with content that could be an imaginary documentation
+page. Here would be some introduction text, perhaps with links, e.g.
+to [Markdeep](https://casual-effects.com/markdeep/) itself.
+
+
+## What is this?
+
+**Thing** is a thing used to do stuff for various platforms. Some of the things it can do:
+
+* Run on a computer
+* Exit with an exit code
+* Be a replacement for our old system, `theoldthing.exe`
+
+
+## Invoking it
+
+<div class="note">
+This is a note by the way!
+</div>
+
+From the root folder, run "thing" with the target name, e.g.: `thing Yes`
+
+* On Mac, Linux or Windows PowerShell, you'll want to use `./thing` instead of just `thing`.
+* Target and option names are case sensitive!
+* Several things to do can be specified: `thing Yes No FileNotFound`
+
+Additional options can be passed via `-sNAME=VALUE` arguments. Most common ones are CONFIG
+(used to indicate debug or release thing) and PLATFORM (used to indicate 32 vs 64 bit thing).
+
+
+### Subsection on stuff
+
+
+Thing Name              | Description        |Notes
+------------------------|--------------------|-----
+Yes                     | Yup!               |
+No                      | Nope :(            |
+FileNotFound            | Doesn't find files | Pass `-sFIND_FILE=maybe` to maybe find them
+
+
+## Markdeep syntax test
+
+Regular styling like **bold**, _italics_, ~~strikethrough~~, `inline code`, the stuff.
+
+* A
+* Bullet
+* List
+
+And:
+
+1. A
+1. Numbered
+1. List!
+
+Symbol substitutions: a 45-degree turn; som x -> y arrows; some whoa ==> fancy <==> arrows.
+
+Is this a definition list?
+:   Looks like one to me
+Is that right?
+:   Possibly!
+
+And a code listing:
+
+```
+int main()
+{
+    return 1;
+}
+```
+
+Markdeep diagrams:
+
+*******************************************  Here's a text to the right of the diagram,
+* +-----------------+           .-.       *  ain't that fancy. Pretty fancy indeed, I
+* |\                |        .-+   |      *  must say! Markdeep diagrams are generally
+* | \     A-B   *---+--> .--+       '--.  *  enclosed into a rectangle full made of `*`
+* |  \              |   |     Cloud!    | *  symbols; and are "drawn" using ASCII-art
+* +---+-------------+    '-------------'  *  style, with `- | + / \ * o` etc.
+*******************************************  Suh-weet!
+
+
+Another random diagram, just because:
+
+********************
+*    +-+-+-+-*-o   *
+*   / / ^ /        *
+*  / v / /         *
+* +-+-+-+          *
+********************
+
+Now, the following are not part of Markdeep per se, but something in spirit of
+[Admonition](https://squidfunk.github.io/mkdocs-material/extensions/admonition/) blocks.
+Would be lovely if Markdeep would support Admonition-like `!!! type` syntax for them.
+For now their styles are just in my CSS file, and in the source they contain literal
+`<div class="note">` and `</div>` around the text:
+
+<div class="note">
+Hey I'm a note. Don't mind me, I'm just sitting here.
+</div>
+
+<div class="warn">
+I'm a warning, perhaps. *Something might happen!*
+</div>
+
+<div class="error">
+Watch out, something **bad**?
+</div>
+
+
+The table of contents that Markdeep produces is stuffed on the right side, 
+if the browser window is wide enough. Otherwise it is hidden.
+
+
+Well, that's about it! Below all this is just a style statement to make
+the CSS kick in: `<link rel="stylesheet" href="markdeep-docs.css">`, followed
+by the regular markdeep magic line.
+
+<link rel="stylesheet" href="markdeep-docs.css"><!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="https://casual-effects.com/markdeep/0.22/markdeep.min.js"></script></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
