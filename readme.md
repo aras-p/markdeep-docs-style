@@ -1,7 +1,7 @@
 # Documentation CSS style for Markdeep
 
-> **Note**: this repository is obsolete, since Markdeep 0.22 rolled in this style into official release,
-> as well as added note/warning/error "admonitions" syntax support. Now _that's_ some impressive turnaround time! \o/
+> **Note**: this repository is obsolete, since Markdeep 0.22 rolled in this style into official release (as `apidoc.css`).
+> And also added note/warning/error "admonitions" syntax support. Now _that's_ some impressive turnaround time! \o/
 
 [Markdeep](https://casual-effects.com/markdeep/) is a sweet Markdown processor script
 that allows you writing extended Markdown files, and have them vieweble formatted
